@@ -54,7 +54,6 @@ The importmap.yml file keep the same structure of importmap in HTML
     <%= yield %>
   </body>
 </html>
-
 ```
 
 ## Sample (using Stimulus JS)
@@ -116,6 +115,13 @@ title: Welcome to Middleman
 ```
 
 If all things are OK, than start middleman server using command `bundle exec middleman server` and open your browser devtools to see the messages.
+
+## See more
+
+- [Importmap polyfill at guybedford/es-module-shims](https://github.com/guybedford/es-module-shims)
+- [Can I Use about Import Maps browser support](https://caniuse.com/import-maps)
+- [W3C Import Maps Spec](https://wicg.github.io/import-maps/)
+- [The helper tags are inspired by rails/importmap-rails gem](https://github.com/rails/importmap-rails)
 
 ## License
 
