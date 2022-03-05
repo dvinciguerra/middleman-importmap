@@ -1,6 +1,8 @@
 
 # middleman-importmap
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/aab4c3c09d920639f962/maintainability)](https://codeclimate.com/github/dvinciguerra/middleman-importmap/maintainability)
+
 An Importmap extension for Middleman.
 
 
