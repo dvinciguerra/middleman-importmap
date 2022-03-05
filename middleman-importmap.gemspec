@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.summary     = "Middleman Importmap extension"
   s.description = "An extension to port importmap assets to Middleman"
 
-  s.files         = %x(git ls-files).split("\n")
+  s.files         = %x(git ls-files -- lib/*).split("\n")
   s.test_files    = %x(git ls-files -- {test,spec,features}/*).split("\n")
   s.executables   = %x(git ls-files -- bin/*).split("\n").map { |f| File.basename(f) }
   s.require_paths = ["lib"]
