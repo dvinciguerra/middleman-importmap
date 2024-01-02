@@ -15,19 +15,19 @@ An Importmap extension for Middleman.
 
 ## Usage
 
-**Activate extension in `config.rb`**
+#### Activate extension in `config.rb`**
 
 ```ruby
 activate :importmap
 ```
 
-**Create the `importmap.yml` file at middleman root path**
+#### Create the `importmap.yml` file at middleman root path
 
 ```shell
 $ cd middleman_project && touch importmap.yml
 ```
 
-**Add importmaps to file (example)**
+#### Add importmaps to file (example)
 
 ```yaml
 imports:
@@ -37,7 +37,7 @@ imports:
 The importmap.yml file keep the same structure of importmap in HTML
 
 
-**Replace default javascript tag by importmap**
+#### Replace default javascript tag by importmap
 
 ```ruby
 <!doctype html>
@@ -60,7 +60,10 @@ The importmap.yml file keep the same structure of importmap in HTML
 
 ## Sample (using Stimulus JS)
 
-**Add the following code to `/source/javascripts/site.js`**
+
+### Creating an app using Stimulus JS
+
+#### Add the following code to `/source/javascripts/site.js`
 
 ```javascript
 import { Application } from "@hotwired/stimulus"
@@ -71,13 +74,13 @@ window.Stimulus = Application.start()
 Stimulus.register("hello", HelloController)
 ```
 
-**Create `/source/javascripts/controllers` directory**
+#### Create `controllers` directory
 
 ```shell
 $ mkdir -p source/javascripts/controllers
 ```
 
-**Now add HelloController at `/source/javascripts/controllers/hello_controller.js`**
+#### Now add HelloController at `controllers/hello_controller.js`
 
 ```javascript
 import { Controller } from "@hotwired/stimulus"
@@ -93,7 +96,7 @@ export default class extends Controller {
 }
 ```
 
-**One last and important thing is add element binding at `source/index.html.erb`**
+#### One last and important thing is add element binding at `index.html.erb`
 
 ```ruby
 ---
