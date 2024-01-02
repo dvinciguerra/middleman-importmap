@@ -58,7 +58,9 @@ The importmap.yml file keep the same structure of importmap in HTML
 </html>
 ```
 
-## Sample (using Stimulus JS)
+## Examples
+- [Creating an app using Stimulus JS](#creating-an-app-using-stimulus-js)
+- [Creating an app using React and React Router](#creating-an-app-using-react-and-react-router)
 
 
 ### Creating an app using Stimulus JS
