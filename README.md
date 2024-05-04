@@ -58,6 +58,34 @@ The importmap.yml file keep the same structure of importmap in HTML
 </html>
 ```
 
+#### Customize options if necessary
+
+##### in `config.rb`:
+
+```ruby
+activate :importmap do |option|
+  option.entrypoint = "site" # js entrypoint's filename without extension
+  option.importmap = "importmap.yml" # importmap's filename with extension
+  option.use_shim = true # or false
+  option.shim_src = "path/to/shim" # defaults to hardcoded js cdn
+end
+```
+
+##### or by specifying arguments in template helpers:
+
+This will override options in config.rb
+
+```ruby
+<%= javascript_importmap_tags("main", importmap: "another_name.yml", shim: false) %>
+
+# or customize one by one:
+<%= javascript_importmap_shim_tag(shim_src: "another/path") %>
+<%= javascript_inline_importmap_tag("another_name.yml", shim: true) %>
+<%= javascript_inline_module_tag("main", shim: true) %>
+
+# See source code for method implementation
+```
+
 ## Examples
 - [Creating an app using Stimulus JS](#creating-an-app-using-stimulus-js)
 - [Creating an app using React and React Router](#creating-an-app-using-react-and-react-router)
