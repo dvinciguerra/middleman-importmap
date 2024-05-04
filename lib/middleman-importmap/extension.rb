@@ -42,7 +42,7 @@ module Middleman
 
     def javascript_inline_importmap_tag(importmap = options.importmap, shim: options.use_shim)
       template = File.join(File.dirname(__FILE__), 'views/javascript_inline_importmap_tag.html.erb')
-      importmap_config = YAML.load_file(File.join(app.root_path, importmap), symbolize_names: true)
+      importmap_config = load_importmap(File.join(app.root_path, importmap))
 
       erb = ERB.new(File.read(template))
       erb.result_with_hash(importmap: importmap_config, 
@@ -55,6 +55,19 @@ module Middleman
       erb = ERB.new(File.read(template))
       erb.result_with_hash(entrypoint: entrypoint, 
                                  type: shim ? "module-shim" : "module")
+    end
+
+    private
+
+    def load_importmap(path)
+      if path.end_with?('.yml', '.yaml')
+        importmap = YAML.load_file(path, symbolize_names: true)
+        JSON.pretty_generate(importmap)
+      elsif path.end_with?('.json')
+        File.read(path)
+      else
+        raise "Importmap format must be YAML or JSON"
+      end
     end
   end
 end
