@@ -9,9 +9,13 @@ group :development do
   gem 'rake'
   gem 'rdoc'
   gem 'yard'
+
+  gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
+  gem 'solargraph', require: false
 end
 
-group :test do
+group :development, :test do
   gem 'cucumber'
   gem 'aruba'
   gem 'rspec'
